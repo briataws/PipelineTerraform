@@ -35,7 +35,7 @@ def call(Map pipelineParams) {
       stage('terraform: deve') {
         when {
           not {
-            branch 'master'
+            branch 'main'
           }
         }
         steps {
@@ -58,7 +58,7 @@ def call(Map pipelineParams) {
 
       stage('terraform: test') {
         when {
-          branch "master"
+          branch "main"
         }
         steps {
           script {
@@ -80,7 +80,7 @@ def call(Map pipelineParams) {
 
       stage('terraform plan: stag') {
         when {
-          branch "master"
+          branch "main"
         }
         steps {
           script {
@@ -100,7 +100,7 @@ def call(Map pipelineParams) {
 
       stage('Approve Terraform Plan: Stag') {
         when {
-          branch "master"
+          branch "main"
         }
         steps {
           script {
@@ -114,7 +114,7 @@ def call(Map pipelineParams) {
 
       stage('terraform apply: stag') {
         when {
-          branch "master"
+          branch "main"
         }
         steps {
           script {
@@ -128,7 +128,7 @@ def call(Map pipelineParams) {
 
       stage('terraform plan: prod') {
         when {
-          branch "master"
+          branch "main"
         }
         steps {
           script {
@@ -148,7 +148,7 @@ def call(Map pipelineParams) {
 
       stage('Approve Terraform Plan: Prod') {
         when {
-          branch "master"
+          branch "main"
         }
         steps {
           script {
@@ -162,7 +162,7 @@ def call(Map pipelineParams) {
 
       stage('terraform apply: prod') {
         when {
-          branch "master"
+          branch "main"
         }
         steps {
           script {

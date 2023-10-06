@@ -60,12 +60,12 @@ of the variable files will cause Jenkins to skip deployments to that environment
 
 This pipeline follows a defined behavior and will perform the following workflow.
 
-#### Non-Master Branch
+#### Non-Main Branch
 
 This pipeline will push out changes to the `deve` environment for all changes to the non-master branch. Be aware that
 this can cause conflicts if multiple long running branches exist.
 
-#### Master Branch
+#### Main Branch
 
 Once code is merged into the master branch that code will be promoted to the following environments: `test`, `stag`, `prod`.
 Before code is promoted to `prod` the pipeline will prompt you to accept the changes.
